@@ -7,9 +7,9 @@ const Header = () => {
 			<NavLink to="/">
 				<p className="text-xl lg:text-2xl">
 					<span role="img" aria-label="fruit">
-						🍉
+						🧠
 					</span>
-					Fruit Nutrients
+					Quotes App
 				</p>
 			</NavLink>
 			<div className=" lg:block">
@@ -22,15 +22,6 @@ const Header = () => {
 							activeClassName="active-link"
 						>
 							Home
-						</NavLink>
-					</li>
-					<li>
-						<NavLink
-							to="/fruits"
-							className="nav-link"
-							activeClassName="active-link"
-						>
-							Fruits
 						</NavLink>
 					</li>
 					<li>

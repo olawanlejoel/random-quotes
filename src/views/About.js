@@ -1,6 +1,6 @@
 import React from "react";
 
-import fruitsAboutImg from "../images/fruits-abt.jpg";
+import quotesAbt from "../images/quotesAbt.jpg";
 
 const About = () => {
 	return (
@@ -15,7 +15,7 @@ const About = () => {
 				<div className="flex gap-10 justify-center items-center flex-col lg:flex-row mt-10">
 					<div className="">
 						<img
-							src={fruitsAboutImg}
+							src={quotesAbt}
 							className="w-96 rounded-xl lg:rounded-l-xl"
 							alt=""
 						/>
@@ -25,20 +25,11 @@ const About = () => {
 							⭐⭐⭐
 						</span>
 						<p>
-							A healthy diet rich in fruits, vegetables, whole grains and
-							low-fat dairy can help to reduce your risk of heart disease by
-							maintaining blood pressure and cholesterol levels. High blood
-							pressure and cholesterol can be a symptom of too much salt and
-							saturated fats in your diet.
-						</p>
-						<p>
-							Many healthful foods, including vegetables, fruits, and beans, are
-							lower in calories than most processed foods.
-						</p>
-						<p>
-							Children learn most health-related behaviors from the adults
-							around them, and parents who model healthful eating and exercise
-							habits tend to pass these on.
+							Inspirational quotes are greatly beneficial to everyone,
+							especially writers, regardless of where they are in the writing
+							process. Quotes can help generate ideas within brainstorming,
+							which can influence the ideas within the piece. They can send you
+							in new directions by presenting the ideas of others.
 						</p>
 						<span role="img" aria-label="stars">
 							⭐⭐⭐

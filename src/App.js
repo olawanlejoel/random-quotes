@@ -5,7 +5,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 // views
 import Home from "./views/Home";
 import About from "./views/About";
-import Fruits from "./views/Fruits";
 
 // components
 import Header from "./components/Header";
@@ -22,7 +21,6 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/About" element={<About />} />
-				<Route path="/Fruits" element={<Fruits />} />
 			</Routes>
 			{/* Footer Area */}
 			<div className="max-w-full">

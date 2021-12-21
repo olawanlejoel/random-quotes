@@ -1,8 +1,17 @@
-import React from "react";
-
-import fruitsImg from "../images/fruits-icon.png";
+import React, { useState } from "react";
+import api from "../api/api";
 
 const Home = () => {
+	const [post, setPost] = useState([]);
+
+	function generate() {
+		api.get("/quotes").then((response) => {
+			let randomNumber = Math.floor(Math.random() * 1643);
+			let randQuote = response.data[randomNumber];
+			setPost(randQuote);
+		});
+	}
+
 	return (
 		<section className="container w-full lg:px-0 px-5 lg:w-3/4 mx-auto">
 			<div className="flex lg:flex-row flex-col my-10 justify-center text-center">
@@ -13,9 +22,7 @@ const Home = () => {
 							👋
 						</span>
 					</h2>
-					<p className="text-xl lg:text-2xl">
-						Wanna know the nutritional components of your fruits?
-					</p>
+					<p className="text-xl lg:text-2xl">Wanna get random quotes?</p>
 				</div>
 			</div>
 			<hr className="my-10" />
@@ -23,26 +30,18 @@ const Home = () => {
 				className="bg-gray-100 rounded-xl p-10 w-full flex lg:flex-row flex-col items-center justify-center lg:gap-40 gap-20 lg:mb-40 mb-20"
 				// style={{ backgroundColor: `#${category.hexCode}` }}
 			>
-				<img src={fruitsImg} alt="fruit icon" className="w-80" />
-				<div className="">
-					<div className="text-center">
-						<h4 className="text-2xl py-3 font-bold capitalize">
-							Get to know your Fruits!
-						</h4>
-						<p>
-							Get basic nutritional facts about your fruit with just one search.
-						</p>
-					</div>
+				<div className="w-3/4">
+					<p className="font-bold">{post.text}</p>
+					<p className="italic">- {post.author}</p>
+				</div>
+				<div className="w-1/4">
 					<div className="flex items-center mt-5 gap-3 flex-col">
-						<input
-							type="text"
-							className="w-full lg:w-80 p-2 border-2 border-gray-500 rounded focus:outline-none"
-						/>
 						<button
+							onClick={generate}
 							style={{ backgroundColor: "#FE043C" }}
 							className="rounded w-full lg:w-auto px-10 py-3 text-white"
 						>
-							Search
+							Get Random Quote
 						</button>
 					</div>
 				</div>
