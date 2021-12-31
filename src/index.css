@@ -12,7 +12,6 @@ code {
     monospace;
 }
 
-.active-link,
 .nav-link:hover {
   transition: all .5s ease-in-out;
   color: #FE043C;

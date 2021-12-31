@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import api from "../api/api";
 
 const Home = () => {
-	const [post, setPost] = useState([]);
+	const [quotes, setQuotes] = useState([]);
+	const [randomQuote, setRandomQuote] = useState([]);
 
-	function generate() {
+	useEffect(() => {
 		api.get("/quotes").then((response) => {
-			let randomNumber = Math.floor(Math.random() * 1643);
-			let randQuote = response.data[randomNumber];
-			setPost(randQuote);
+			const quotes = response.data;
+			setQuotes(quotes);
 		});
-	}
+	}, []);
+
+	const generate = () => {
+		let randomNumber = Math.floor(Math.random() * 1643);
+		const randomQuote = quotes[randomNumber];
+		setRandomQuote(randomQuote);
+	};
 
 	return (
 		<section className="container w-full lg:px-0 px-5 lg:w-3/4 mx-auto">
@@ -31,8 +37,8 @@ const Home = () => {
 				// style={{ backgroundColor: `#${category.hexCode}` }}
 			>
 				<div className="w-3/4">
-					<p className="font-bold">{post.text}</p>
-					<p className="italic">- {post.author}</p>
+					<p className="font-bold">{randomQuote.text}</p>
+					<p className="italic">- {randomQuote.author}</p>
 				</div>
 				<div className="w-1/4">
 					<div className="flex items-center mt-5 gap-3 flex-col">
